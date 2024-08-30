@@ -4,24 +4,22 @@
  */
 var findMaxConsecutiveOnes = function(nums) {
     let maxOnes = 0;
-    let ones = 1;
-    let consecutiveOnes = 0;
+    let ones = 0;
 
     for(let i = 0; i < nums.length; i++) {
         
-        if(nums[i] == 1 && nums[i + 1] == 1) {
+        if(nums[i] == 1) {
             ones++;
-            consecutiveOnes = ones;
-            if(consecutiveOnes > maxOnes) {
-                maxOnes = consecutiveOnes;
+            if(ones > maxOnes) {
+                maxOnes = ones;
             }
         } else {
-            ones = 1;
+            ones = 0;
         }
     }
     return maxOnes;
 };
 
-number = [1, 1, 0, 1, 1, 1, 0, 1]
+number = [1,1,0,1]
 
 console.log(findMaxConsecutiveOnes(number))
